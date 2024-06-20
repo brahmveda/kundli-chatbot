@@ -84,7 +84,7 @@ def json_to_text(data, indent=0):
         text += f"{indent_str}{data}"
     return text
 
-st.title("Vedic Astrology Insights with Groq AI")
+st.title("Vedic Astrology Insights with AI")
 
 option = st.radio("Select an option:", ("Yearly Horoscope", "Personal Characteristics"))
 
@@ -144,8 +144,8 @@ elif option == "Personal Characteristics":
     st.header("Personal Characteristics Prediction")
     st.write("Enter your birth details to get personal characteristics prediction.")
     dob = st.date_input("Date of Birth", min_value=datetime(1900, 1, 1), max_value=datetime.now())
-    lat = st.text_input("Latitude", "21.1702")
-    lon = st.text_input("Longitude", "72.8311")
+    lat = st.text_input("Latitude")
+    lon = st.text_input("Longitude")
     tz = st.number_input("Time Zone", value=5.5)
     time_options = generate_time_options()
     tob = st.selectbox("Time of Birth", time_options)
