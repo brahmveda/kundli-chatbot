@@ -87,12 +87,26 @@ def json_to_text(data, indent=0):
 st.title("Vedic Astrology Insights with AI")
 
 option = st.radio("Select an option:", ("Yearly Horoscope", "Personal Characteristics"))
-
+zodiac_signs = {
+    1: "Aries",
+    2: "Taurus",
+    3: "Gemini",
+    4: "Cancer",
+    5: "Leo",
+    6: "Virgo",
+    7: "Libra",
+    8: "Scorpio",
+    9: "Sagittarius",
+    10: "Capricorn",
+    11: "Aquarius",
+    12: "Pisces"
+}
 if option == "Yearly Horoscope":
     st.header("Yearly Horoscope Prediction")
     st.write("Enter the details to get your yearly horoscope prediction.")
     year = st.number_input("Year", min_value=2000, max_value=2100, value=2023)
-    zodiac = st.selectbox("Zodiac Sign", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+    zodiac_name = st.selectbox("Zodiac Sign", list(zodiac_signs.values()))
+    zodiac = list(zodiac_signs.keys())[list(zodiac_signs.values()).index(zodiac_name)] 
     lang = st.selectbox("Language", ["en", "hi"], index=0)
 
     if st.button("Get Yearly Prediction"):
